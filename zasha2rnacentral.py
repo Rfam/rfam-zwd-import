@@ -35,11 +35,38 @@ def get_stockholm_annotations(filename):
             if line.startswith('#=GF '):
                 (key, value) = line.replace('#=GF ', '').strip().split(' ', 1)
                 annotations[key] = value
+    if 'TP' not in annotations:
+        print('TP line not found %s' % filename)
     return annotations
 
 
+def get_papers_info(filename):
+    """
+    104	https://www.ncbi.nlm.nih.gov/pubmed/20230605
+    """
+    papers = {}
+    with open(filename, 'r') as infile:
+        for line in infile.readlines():
+            fields = line.strip().split('\t')
+            if 'https' in fields[1]:
+                papers[fields[0]] = fields[1].replace('https://www.ncbi.nlm.nih.gov/pubmed/', '')
+    return papers
+
+
+def get_not_for_rfam_info(filename):
+    """
+    104/aceE.sto
+    104/Bacteroides-2.sto
+    """
+    excluded = []
+    with open(filename, 'r') as infile:
+        for line in infile.readlines():
+            excluded.append(line.strip())
+    return excluded
+
+
 def check_sequence(sequence):
-    ok = 'ACGYRNSMWBKU'
+    ok = 'ACGYRNSMWBKT'
     return all(c in ok for c in sequence)
 
 
@@ -56,7 +83,7 @@ def get_folders():
         'THF',
         'c-di-GMP-II',
         'exceptional',
-        'patches',
+        # 'patches',
         'preQ1-III',
         'ts',
         'twister',
@@ -64,17 +91,39 @@ def get_folders():
     ]
 
 
+def get_so_term(tp_line):
+    so_term = 'SO:0000655'  # ncRNA
+    if tp_line == 'Cis-reg;':
+        so_term = '	SO:0005836'  # regulatory_region
+    elif tp_line == 'Cis-reg; leader;':
+        so_term = 'SO:0000204'  # five_prime_UTR
+    elif tp_line == 'Cis-reg; riboswitch;':
+        so_term = 'SO:0000035'  # riboswitch
+    elif tp_line == 'Gene; antisense;':
+        so_term = 'SO:0000077'  # antisense
+    elif tp_line in ['Gene; ribozyme;', 'Gene;ribozyme;']:
+        so_term = 'SO:0000374'  # ribozyme
+    elif tp_line == 'Gene; sRNA;':
+        so_term = 'SO:0000370'  # small_regulatory_ncRNA
+    return so_term
+
+
 def main():
 
     location = '/data/zashaweinbergdata/'
     entries = []
 
-    taxid_file = '{}/sto-seqid-taxid.tab'.format(location)
-    taxid_data = get_taxid_data(taxid_file)
+    taxid_data = get_taxid_data(os.path.join(location, 'sto-seqid-taxid.tab'))
+    papers_data = get_papers_info(os.path.join(location, 'PAPERS'))
+    excluded = get_not_for_rfam_info(os.path.join(location, 'not-for-Rfam'))
 
     for folder in get_folders():
         for filename in glob.glob(os.path.join(location, folder, '*.sto')):
             rna_name = os.path.basename(filename).replace('.sto', '')
+
+            if os.path.join(folder, rna_name + '.sto') in excluded:
+                print('Skipping {}'.format(filename))
+                continue
 
             alignment = AlignIO.read(open(filename), 'stockholm')
             annotations = get_stockholm_annotations(filename)
@@ -83,10 +132,10 @@ def main():
             #     import pdb; pdb.set_trace()
 
             for record in alignment:
-                sequence = str(record.seq.ungap('-')).upper()
+                sequence = str(record.seq.ungap('-')).upper().replace('U', 'T')
                 if check_sequence(sequence) != True:
                     'Check sequence: %s' % sequence
-                    import pdb; pdb.set_trace()
+                    # import pdb; pdb.set_trace()
                 # assert check_sequence(sequence) == True, 'Check sequence: %s' % sequence
 
                 if record.name in taxid_data:
@@ -95,15 +144,14 @@ def main():
                     taxid = '12908'  # unclassified sequences
 
                 entries.append({
-                    'primaryId': record.id,
-                    'taxonId': taxid,
-                    'soTermId': '',
+                    'primaryId': record.id.replace('/', ':'),
+                    'taxonId': 'NCBITaxon:{}'.format(taxid),
+                    'soTermId': get_so_term(annotations['TP'] if 'TP' in annotations else ''),
                     'sequence': sequence,
                     'name': annotations['DE'] if 'DE' in annotations else '{} RNA'.format(rna_name),
-                    # 'version': '1',
                     'url': 'https://bitbucket.org/zashaw/zashaweinbergdata/src/ba3b34e5418b990a87595ba150865be4d1d0bd35/{}/{}.sto'.format(folder, rna_name),
                     'publications' : [
-                        'PMID:',
+                        'PMID:{}'.format(papers_data[folder]),
                     ],
                 })
 
@@ -123,47 +171,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
-# {
-#         'data': [{
-#                 'primaryId': 'FLYBASE:FBtr0346876',
-#                 'taxonId': 'NCBITaxon:7227',
-#                 'soTermId': 'SO:0000651',
-#                 'sequence': 'ACGU',
-#                 'name': '28S ribosomal RNA',
-#                 'version': '1',
-#                 'gene': {
-#                         'geneId': 'FLYBASE:FBgn0267497',
-#                         'symbol': 'Dmel\\28SrRNA:CR45837'
-#                 },
-#                 'genomeLocations': [{
-#                         'assembly': 'BDGP6',
-#                         'exons': [{
-#                                 'INSDC_accession': 'CP007120.1',
-#                                 'startPosition': 46770,
-#                                 'endPosition': 49484,
-#                                 'strand': '+'
-#                         }]
-#                 }],
-#                 'url': 'http://flybase.org/reports/FBgn0267497.html',
-#                 'publications': [
-#                         'PMID:11679670',
-#                         'PMID:15183728',
-#                         'PMID:12554860',
-#                         'PMID:14573789',
-#                         'PMID:15325244',
-#                         'PMID:17604727',
-#                         'PMID:17616659',
-#                         'PMID:17989717',
-#                         'PMID:20158877'
-#                 ]
-#         }],
-#         'metaData': {
-#                 'dateProduced': '2017-11-20T22:19:12+01:00',
-#                 'dataProvider': 'FLYBASE',
-#                 'release': '2.0',
-#                 'schemaVersion': '0.2.0'
-#         }
-# }
