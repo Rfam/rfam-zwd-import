@@ -15,6 +15,7 @@ limitations under the License.
 import json
 import glob
 import os
+import re
 
 from Bio import AlignIO
 
@@ -65,9 +66,24 @@ def get_not_for_rfam_info(filename):
     return excluded
 
 
+def get_obsolete_taxid_mapping(filename):
+    """
+    Obsolete taxid Current taxid
+    279263  420662
+    469595  1639133
+    """
+    mapping = {}
+    with open(filename, 'r') as infile:
+        for i, line in enumerate(infile.readlines()):
+            if i == 0:
+                continue
+            old, new = line.strip().split('  ')
+            mapping[old] = new
+    return mapping
+
+
 def check_sequence(sequence):
-    ok = 'ACGYRNSMWBKT'
-    return all(c in ok for c in sequence)
+    return re.match(r'^[ACGTYRNSMWBKU]+$', sequence)
 
 
 def get_folders():
@@ -116,6 +132,7 @@ def main():
     taxid_data = get_taxid_data(os.path.join(location, 'sto-seqid-taxid.tab'))
     papers_data = get_papers_info(os.path.join(location, 'PAPERS'))
     excluded = get_not_for_rfam_info(os.path.join(location, 'not-for-Rfam'))
+    taxid_mapping = get_obsolete_taxid_mapping('taxid-mapping.tsv')
 
     for folder in get_folders():
         for filename in glob.glob(os.path.join(location, folder, '*.sto')):
@@ -133,18 +150,19 @@ def main():
 
             for record in alignment:
                 sequence = str(record.seq.ungap('-')).upper().replace('U', 'T')
-                if check_sequence(sequence) != True:
+                if not check_sequence(sequence):
                     'Check sequence: %s' % sequence
-                    # import pdb; pdb.set_trace()
-                # assert check_sequence(sequence) == True, 'Check sequence: %s' % sequence
+                    continue
 
                 if record.name in taxid_data:
                     taxid = taxid_data[record.name]
+                    if taxid in taxid_mapping:
+                        taxid = taxid_mapping[taxid]
                 else:
                     taxid = '12908'  # unclassified sequences
 
                 entries.append({
-                    'primaryId': record.id.replace('/', ':'),
+                    'primaryId': 'ZWD:' + record.id.replace('/', ':'),
                     'taxonId': 'NCBITaxon:{}'.format(taxid),
                     'soTermId': get_so_term(annotations['TP'] if 'TP' in annotations else ''),
                     'sequence': sequence,
@@ -158,14 +176,15 @@ def main():
     data = {
         'data': entries,
         'metaData': {
-                'dateProduced': '2018-06-08',
-                'dataProvider': 'Zasha Weinberg Data',
+                "dateProduced": "2018-08-24T00:00:00+01:00",
+                'dataProvider': 'ZWD',
                 'release': '1.0',
-                'schemaVersion': '0.2.0'
+                'schemaVersion': '0.2.0',
+                'publications': [],
         }
     }
 
-    with open('zwd.json', 'w') as outfile:
+    with open('/data/zwd.json', 'w') as outfile:
         json.dump(data, outfile)
 
 
