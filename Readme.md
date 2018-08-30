@@ -2,15 +2,17 @@
 # Code for importing ZWD into RNAcentral
 
 [ZWD](https://bitbucket.org/zashaw/zashaweinbergdata) (Zasha Weinberg Database) is a repository containing
-the RNA motif alignments produced by [Zasha Weinberg](https://orcid.org/0000-0002-6681-3624).
+RNA motif alignments produced by Dr [Zasha Weinberg](https://orcid.org/0000-0002-6681-3624).
 
 Many sequences in ZWD alignments are from environmental samples and cannot
 be included in [Rfam](http://rfam.org) seed alignments because they do not have
 stable identifiers and NCBI taxids.
 
-In order to include all sequences in Rfam seed alignments,
-all ZWD sequences are first imported into RNAcentral to assign stable identifiers
-and NCBI taxids using the code from this repository.
+In order to get stable identifiers and NCBI taxids for these RNAs,
+the ZWD sequences are first imported into [RNAcentral](http://rnacentral.org)
+using the [https://github.com/RNAcentral/rnacentral-data-schema](RNAcentral JSON schema).
+
+The [zwd.json](https://github.com/Rfam/rfam-zwd-import/blob/master/zwd.json) file is used in RNAcentral import.
 
 ## Usage
 
