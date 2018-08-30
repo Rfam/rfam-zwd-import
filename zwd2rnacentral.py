@@ -139,7 +139,7 @@ def main():
             rna_name = os.path.basename(filename).replace('.sto', '')
 
             if os.path.join(folder, rna_name + '.sto') in excluded:
-                print('Skipping {}'.format(filename))
+                print('Not for Rfam: {}'.format(filename))
                 continue
 
             alignment = AlignIO.read(open(filename), 'stockholm')
@@ -180,11 +180,13 @@ def main():
                 'dataProvider': 'ZWD',
                 'release': '1.0',
                 'schemaVersion': '0.2.0',
-                'publications': [],
+                'publications': [
+                    'PMID:28977401',
+                ],
         }
     }
 
-    with open('/data/zwd.json', 'w') as outfile:
+    with open('/data/rnacentral/zwd.json', 'w') as outfile:
         json.dump(data, outfile)
 
 
