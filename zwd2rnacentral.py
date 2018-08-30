@@ -110,7 +110,7 @@ def get_folders():
 def get_so_term(tp_line):
     so_term = 'SO:0000655'  # ncRNA
     if tp_line == 'Cis-reg;':
-        so_term = '	SO:0005836'  # regulatory_region
+        so_term = 'SO:0005836'  # regulatory_region
     elif tp_line == 'Cis-reg; leader;':
         so_term = 'SO:0000204'  # five_prime_UTR
     elif tp_line == 'Cis-reg; riboswitch;':
