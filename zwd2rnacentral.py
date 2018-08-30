@@ -141,6 +141,8 @@ def main():
             if os.path.join(folder, rna_name + '.sto') in excluded:
                 print('Not for Rfam: {}'.format(filename))
                 continue
+            else:
+                print(filename)
 
             alignment = AlignIO.read(open(filename), 'stockholm')
             annotations = get_stockholm_annotations(filename)
