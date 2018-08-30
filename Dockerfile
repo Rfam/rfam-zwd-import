@@ -14,5 +14,5 @@ RUN git clone https://bitbucket.org/zashaw/zashaweinbergdata.git && \
 
 RUN git clone https://github.com/RNAcentral/rnacentral-data-schema.git && \
     cd rnacentral-data-schema && \
-    git checkout ad6f6fbd9181ea70a21a03a41515d01e20dc831f && \
+    git checkout e2390bf9490601993d695fce2152376d531e8eee && \
     pip install -r requirements.txt
