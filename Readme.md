@@ -10,7 +10,7 @@ stable identifiers and NCBI taxids.
 
 In order to get stable identifiers and NCBI taxids for these RNAs,
 the ZWD sequences are first imported into [RNAcentral](http://rnacentral.org)
-using the [https://github.com/RNAcentral/rnacentral-data-schema](RNAcentral JSON schema).
+using the [RNAcentral JSON schema](https://github.com/RNAcentral/rnacentral-data-schema).
 
 The [zwd.json](https://github.com/Rfam/rfam-zwd-import/blob/master/zwd.json) file is used in RNAcentral import.
 
