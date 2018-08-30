@@ -164,7 +164,7 @@ def main():
                     taxid = '12908'  # unclassified sequences
 
                 entries.append({
-                    'primaryId': 'ZWD:' + record.id.replace('/', ':'),
+                    'primaryId': 'ZWD:' + record.id,
                     'taxonId': 'NCBITaxon:{}'.format(taxid),
                     'soTermId': get_so_term(annotations['TP'] if 'TP' in annotations else ''),
                     'sequence': sequence,
