@@ -1,0 +1,232 @@
+motif,RNA?,cis-reg?,switch?,Taxa,#,Avg. len.,Analysis method
+6A,y,n,n,"Actinobacteria (1 example), Firmicutes, Fusobacteria",1049,53,Terminator (Clostridia)
+Aamy,?,?,?,Bifidobacterium (Actinobacteria),63,148,Downstream gene
+abiF,y/?,n,N,"Actinobacteria, Bacteroidetes, Clostridia, Proteobacteria, one Clostridia phage",356,37,Environment (Freshwater)
+Actino-ugpB,Y,?,?,Actinobacteria,25,62,Lineage (Bifidobacteriales)
+Actinomyces-1,Y,n,n,Actinomyces,1083,110,Lineage (Actinomycetales)
+algC,Y,y,n,Enterobacteriaceae,2225,51,Downstream gene
+ARRPOF,Y ssDNA,n,n,Fusobacteria,78,260,Big IGRs
+ARRPOF-assoc,y ssDNA,n,n,Fusobacteria,20,53,Nearby to ARRPOF RNA
+aspS,y,y SD,?,Actinobacteria,158,82,Lineage (Coriobacterales)
+atpB,y,?,?,Corynebacteriaceae (Actinobacteria),356,128,Downstream gene
+Bacilli-1,y,n,n,Bacilli (Firmicutes),590,65,Big IGRs
+Bacteroidales-2,y,n,n,Bacteroidales,355,419,Big IGRs
+Betaproteobacteria-1,y,n,n,Betaproteobacteria,131,122,Big IGRs
+blandensis-1,?,n,n,Leeuwenhoekiella,9,65,Lineage (Bacteroidetes)
+Burkholderiales-2,y,n,n,"Betaproteobacteria, Bacteroidetes (suspicious)",22,74,Big IGRs
+c4-2,Y,n,n,"Bacteroidetes, some Proteobacteria",726,77,Lineage (Flavobacteria)
+caiA,y,?,n,Clostridiales (Firmicutes),35,78,Downstream gene
+che1,y,?,?,Streptomyces,112,96,Big IGRs
+Chloroflexus-1,y,n,n,Chloroflexus (Chloroflexi),8,171,Downstream gene
+chrB-a,y,Y >1 SD,?,Alphaproteobacteria,211,81,Downstream gene
+chrB-b,y,Y >1,?,"Alphaproteobacteria, Betaproteobacteria",601,50,Environment (Rainforest soil)
+Clostridiales-2,y,n,n,Clostridiales,52,83,Environment (Chloroethene soil)
+Clostridiales-3,y,n,n,Clostridiales (Firmicutes),559,252,Big IGRs
+Clostridium-PBP,y,?,n,"Environmental, Clostridium (Firmicute; 1 example)",204,73,Downstream gene
+COG2827,y,?,n,Clostridiales,146,82,Nearby to self-splicing intron genes
+COG2908,y,y >1,?,Freshwater metagenome only,10,45,Environment (Freshwater)
+COG3610-DE,Y,? up,?,Lactobacillales (Firmicutes),151,117,Lineage (Lactobacillaceae)
+COG3860,y,y,n,Proteobacteria,42,55,Lineage (Rhizobiales)
+COG3943,y,?,n,cow rumen,27,107,Environment (Cow rumen (57))
+cold-seep-1,y,?,?,"Environmental, Norwegian cold seep",15,153,Environment (Cold seep)
+Corio-PBP,y,?,?,Actinobacteria,21,76,Lineage (Coriobacterales)
+cow-rumen-1,y,n,n,cow rumen metagenome,53,62,Environment (Cow rumen (57))
+cow-rumen-2,y,n,n,cow rumen metagenome,36,106,Environment (Cow rumen (57))
+cow-rumen-3,?,n,n,cow rumen metagenome,9,127,Environment (Cow rumen (57))
+cow-rumen-4,y,? SD,n,cow rumen metagenome,8,63,Environment (Cow rumen (57))
+Cupriavidus-1,y,?,?,Betaproteobacteria,5,80,Lineage (Betaproteobacteria)
+CyVA-1,y,n,n,"Cyanobacteria, Acidobacteria (1 example), Verrucomicrobia (1 example)",176,78,Big IGRs
+D12-methyl,y,?,n,Environmental,29,65,Terminator (Clostridia)
+DABA-DC-AT,y,y,?,Gammaproteobacteria,361,156,Downstream gene
+dfrA-dnaX,y,?,?,Parvimonas (Firmicutes),268,76,Downstream gene
+dinG,y,?,n,Clostridiales (Firmicutes),270,86,Downstream gene
+drum,Y,n,n,"Firmicutes, Bacteroidetes (1 example), Proteobacteria (2 examples), Spirochaetes (2 examples)",1683,112,Terminator (Clostridia)
+DUF1646,Y,Y >1 tt,y,"Proteobacteria, NC10, Acidobacteria, Verrucomicrobia",477,50,Lineage (Clostridia)
+DUF1874,Y ssDNA,y >1 SD,n,Hot springs metagenome only,77,95,"Environment (Bison Hot Springs, Yellowstone)"
+DUF2693,y,?,?,Porphyromonas (Bacteroidetes),100,168,Big IGRs
+DUF2693-FD,y,?,n,Bacteroides,566,49,No recognized genes
+DUF2800,Y,y >1,?,"Actinobacteria, Firmicutes, Synergistetes (1 example)",254,165,Terminator (Clostridia)
+DUF2815,y,?,n,Environmental,31,62,Downstream gene
+DUF3085,y,y,?,Thauera (Betaproteobacteria),16,74,Environment (Sludge)
+DUF3268,y,?,?,"Firmicutes (Bacilli, Clostridia)",314,119,Downstream gene
+DUF3577,y,y,n,Cardiobacterium (Gammaproteobacteria),263,103,No recognized genes
+DUF3800-I,Y,n,n,"Actinobacteria, Firmicutes, Fusobacteria, Proteobacteria (1 example), Tenericutes (2 examples)",810,118,Terminator (Clostridia)
+DUF3800-II,y,n,n,Environmental,27,68,Nearby to DUF3800
+DUF3800-III,y,n,n,Microgenomates,74,110,Nearby to DUF3800
+DUF3800-IV,y,n,n,Actinobacteria,10,92,Nearby to DUF3800
+DUF3800-V,y,n,n,Proteobacteria,93,98,Nearby to DUF3800
+DUF3800-VI,y,n,n,"Actinobacteria, Planctomycetes, Proteobacteria, Spirochaetes",213,52,Nearby to DUF3800
+DUF3800-VII,y,n,n,"Firmicutes, Proteobacteria",195,89,Nearby to DUF3800
+DUF3800-VIII,y,n,n,"Bacteroidetes, Cyanobacteria, Firmicutes, Planctomycetes (1 example), Proteobacteria, Tenericutes (1 example)",501,67,Nearby to DUF3800
+DUF3800-IX,y,n,n,"Actinobacteria, Firmicutes (1 example), Nitrospirae, Proteobacteria, Verrucomicrobia (1 example)",306,70,Nearby to DUF3800
+DUF3800-X,y,n,n,Euryarchaeota (Archaea),131,77,Nearby to DUF3800
+DUF3800-XI,y,n,n,"Actinobacteria, Firmicutes, Proteobacteria, Spirochaetes (1 example)",538,48,Nearby to DUF3800
+DUF805,y,y >1,?,"Bacteroidetes, Aeromonadales",48,68,Lineage (Bacteroidetes)
+DUF805b,y,y >1,?,"Bacteroidetes, Chlorobi (1 example), Proteobacteria",5733,35,Lineage (Flavobacteria)
+EFASI,Y,n,n,Enterobacteriaceae (Gammaproteobacteria),1725,135,Big IGRs
+EGFOA,y,n,n,"Firmicutes, Actinobacteria",121,114,Big IGRs
+EGFOA-assoc-1,y,n,n,Environmental,23,251,Nearby to EGFOA RNA
+EGFOA-assoc-2,?,n,n,Environmental,27,103,Nearby to EGFOA RNA
+emrB-Lactobacillus,y,? tto,?,Lactobacillus (Firmicutes),97,65,Downstream gene
+engA,y,y,n,Prevotella (Bacteroidetes),723,95,Downstream gene
+Enterococcus-1,y,n,n,Enterococcus (Firmicutes),298,149,Big IGRs
+Fibro-purF,y,y SD,?,Fibrobacteres,13,75,Downstream gene
+Fibrobacter-1,y,?,n,Fibrobacter (Fibrobacteres),5,101,BLAST against metagenomes (Fibrobacteres)
+Flavo-speA,?,y,?,Bacteroidetes,31,79,Lineage (Flavobacteria)
+Flavobacterium-1,y,n,n,Flavobacterium (Bacteroidetes),360,120,No recognized genes
+folE,y,y SD,?,Alphaproteobacteria,84,40,Upstream of fluoride genes
+folP,y,y,?,Dialister (Negativicutes),167,102,Downstream gene
+freshwater-1,y,n,n,Freshwater and estuary metagenome,8,62,Environment (Freshwater)
+freshwater-2,y,y,?,"Aquatic, esp. fresh water",373,84,No recognized genes
+FTHFS,y,y,?,human gut,80,116,Downstream gene
+ftsZ-DE,y,? up,n,Fibrobacter (Fibrobacteres),13,70,BLAST against metagenomes (Fibrobacteres)
+FuFi-1,y,n,n,"Firmicutes, Fusobacteria",289,199,Big IGRs
+Fusobacteriales-1,y,?,n,Fusobacteria,17,131,Lineage (Fusobacteria)
+GA-cis,y,?,n,Firmicutes,1264,88,"Environment (Human gut, Qin et al., obese & healthy subjects)"
+GEBRO,Y ssDNA,n,n,Streptococcus (Firmicutes),66,349,Big IGRs
+gltS,y,y,?,Vibrionaceae,350,105,Downstream gene
+gntR-DTE,y,?,n,Actinobacteria,7,138,Lineage (Actinomycetales)
+GP20-a,y,y,n,gut metagenomes,121,96,Environment (Cow rumen (57))
+GP20-b,y,y,n,Clostridia,658,62,Downstream gene
+gut-2,y,? tto,n,gut metagenomes,172,48,Environment (Cow rumen (57))
+Haliangium-1,?,n,n,Haliangium (Deltaproteobacteria),14,154,Lineage (Deltaproteobacteria)
+HOLDH,Y,n,n,"Environmental (human tongue dorsum, human supragingival plaque)",22,401,Downstream gene
+HTH-XRE,Y,?,n,Clostridiales,334,78,Downstream gene
+hya,y,y >1,?,Actinobacteria,30,72,Lineage (Actinomycetales)
+ilvB-OMG,y,?,?,OMG group (Gammaproteobacteria),39,209,Downstream gene
+ilvH,y,y,?,Betaproteobacteria,17,68,Lineage (Betaproteobacteria)
+IMES-5,y,?,?,Environmental,79,150,Downstream gene
+IMPDH,y,?,?,Faecalibacterium (Firmicutes),297,109,Downstream gene
+int-alpA,y,n,n,"Acidobacteria (1 example), Planctomycetes (1 example), Proteobacteria",384,70,Environment (Lake Washington)
+IS605-orfB-I,y ssDNA,n,n,Enterococcus (Firmicutes),444,213,No recognized genes
+IS605-orfB-II,y ssDNA,n,n,Environmental,81,149,Big IGRs
+ivy-DE,y,y up,n,Pseudomonas,425,91,Downstream gene
+KDPG-aldolase,y,?,n,Enterobacteriaceae (Gammaproteobacteria),65,86,Downstream gene
+Lacto-3,y,n,n,Lactobacillales (Firmicutes),117,128,Lineage (Lactobacillaceae)
+Lacto-phage-1,y,?,n,Lactobacillales (Firmicutes),9,81,Lineage (Lactobacillaceae)
+LAGLIDADG-1,y,?,n,Environmental,7,64,Nearby to self-splicing intron genes
+LAGLIDADG-2,y,?,n,Halobacteria (Archaea),32,128,Nearby to self-splicing intron genes
+ldcC,y,y >1,?,"Firmicutes, (rarely) Spirochaetes",1588,55,Downstream gene
+leuA-Halobacteria,y,y,?,Halobacteriaceae (Euryarchaeota),304,53,Downstream gene
+LOOT,y,? >1,?,"Latescibacteria, OD1/Parcubacteria, OP11, TM7",489,121,"Lineage (Microgenomates, aka OP11)"
+lysM-Actino,Y,y SD,?,Actinomycetales,359,211,Downstream gene
+lysM-Prevotella,y,y,?,Prevotella (Bacteroidetes),237,66,Downstream gene
+lysM-TM7,y,y,?,TM7,458,141,Downstream gene
+M23,y,?,?,Clostridia,134,54,Downstream gene
+Mahella-1,y,? >1,n,Mahella australiensis (Firmicutes),19,115,Terminator (Clostridia)
+malK-I,y,y SD,?,Clostridia,562,179,Downstream gene
+malK-II,y,y,?,Vibrio (Proteobacteria),322,51,Downstream gene
+malK-III,y,y,?,Environmental,58,97,Downstream gene
+mcrA,y,?,n,Listeria (Firmicutes),29,51,Nearby to self-splicing intron genes
+MDR-NUDIX,y,y >1,?,TM7,17,62,"Lineage (Saccharibacteria, aka TM7)"
+Methylophilales-1,y,n,n,"Methylophilales, lake sediment metagenome",16,107,Environment (Lake Washington)
+Methylosinus-1,y,n,n,Methylosinus trichosporium (Alphaproteobacteria),13,215,Big IGRs
+MISL,y,n,n,Verrucomicrobia,55,782,Big IGRs
+Mu-gpT-DE,y,?,n,Environmental,1131,55,No recognized genes
+nadA,y,n,?,Acidobacteria,240,66,Lineage (Acidobacteria)
+narK,y,y >1 tto,n,Betaproteobacteria and Gammaproteobacteria,592,71,Downstream gene
+nhaA-I,y,y >1,y,"Acidobacteria, Alphaproteobacteria, Betaproteobacteria and Gammaproteobacteria, Verrucomicrobia, cand. division NC10",380,56,Downstream gene
+nhaA-II,y,y,?,Caulobacterales (Alphaproteobacteria),18,87,Downstream gene
+nifS,?,?,?,environmental,95,116,Downstream gene
+NLPC-P60,y,y,?,Streptomyces (Actinobacteria),22,99,Downstream gene
+NMT1,y,y >1,?,Proteobacteria,622,59,Downstream gene
+nqrA-Marinomonas,y,?,?,Marinomonas (Gammaproteobacteria),6,134,Downstream gene
+nrdJ,y,?,n,Streptomyces (Actinobacteria),85,83,Downstream gene
+Ocean-VI,y,?,n,marine metagenomes,26,41,Environment (Puerto Rico trench)
+osmY,y,?,n,Enterobacteriaceae (Gammaproteobacteria),60,71,Downstream gene
+OTKONC,y,n,n,Environmental,70,164,No recognized genes
+PAGEV,y,n,n,Gammaproteobacteria,123,223,Big IGRs
+Parabacteroides-1,y,n,n,Parabacteroides (Bacteroidetes),22,105,Big IGRs
+Pasteurellales-1,?,n,n,Pasteurellales,19,41,Lineage (Pasteurellales)
+pemK,Y,y >1,n,Firmicutes,7124,73,"Environment (Human gut, Qin et al., obese & healthy subjects)"
+Peptidase-S11,y,y,n,Enterobacteria,380,84,"Environment (Termite gut, fungus grower)"
+PGK,y,y >1,?,mammalian gut metagenomes,33,92,Environment (Cow rumen (57))
+poplar-1,y,?,?,metagenome only,22,139,"Environment (Groundwater, Oak Ridge)"
+porB,y,?,n,Neisseria (Betaproteobacteria),527,60,Downstream gene
+Poribacteria-1,y ssDNA,?,n,Poribacteria,12,109,Lineage (Poribacteria)
+Prevotella-1,?,?,n,Bacteroidetes,152,51,Lineage (Bacteroidia)
+Prevotella-2,y,?,?,Prevotella,145,117,Downstream gene
+prmA,?,y >1,n,Hot springs metagenome only,8,54,"Environment (Bison Hot Springs, Yellowstone)"
+Proteo-phage-1,Y,?,n,Proteobacteria,79,81,Environment (Dendroctonus ponderosae gallery)
+proV,y,?,?,Pseudomonas (Gammaproteobacteria),18,148,Big IGRs
+Pseudomonadales-1,y,n,n,Pseudomonadales (Gammaproteobacteria),86,165,Big IGRs
+PTPS,? short,y,?,Bacteroidetes,2440,28,Lineage (Bacteroidia)
+queA,y,?,?,Environmental,15,63,Downstream gene
+RAGATH-16,y,n,n,Environmental,63,72,Nearby to self-cleaving ribozyme genes
+RAGATH-17,y,n,n,Environmental,11,98,Nearby to self-cleaving ribozyme genes
+RAGATH-18,Y,n,n,"Actinobacteria, Firmicutes, Fusobacteria, Thermotogae (1 example)",3303,71,Nearby to self-cleaving ribozyme genes
+RAGATH-19,y,n,n,Environmental,20,140,Nearby to self-cleaving ribozyme genes
+RAGATH-20,y,n,n,Environmental,29,102,Nearby to self-cleaving ribozyme genes
+RAGATH-21,y,n,n,Clostridiales (Firmicutes),64,80,Nearby to self-cleaving ribozyme genes
+RAGATH-22,y,n,n,Veillonella (Firmicutes),33,168,Nearby to self-cleaving ribozyme genes
+RAGATH-23,y,n,n,Environmental,33,98,Nearby to self-cleaving ribozyme genes
+RAGATH-24,y,n,n,Environmental,33,102,Nearby to self-cleaving ribozyme genes
+RAGATH-25,y,n,n,Firmicutes,138,50,Nearby to self-cleaving ribozyme genes
+RAGATH-26,y,n,n,Environmental,9,78,Nearby to self-cleaving ribozyme genes
+RAGATH-27,y,n,n,Clostridiales (Firmicutes),30,86,Nearby to self-cleaving ribozyme genes
+RAGATH-28,y,n,n,Clostridiales (Firmicutes),252,85,Nearby to self-cleaving ribozyme genes
+RAGATH-29,y,n,n,Environmental,7,100,Nearby to self-cleaving ribozyme genes
+RAGATH-30,y,n,n,Environmental,92,59,Nearby to self-cleaving ribozyme genes
+RAGATH-31,y,n,n,Oscillibacter (Firmicutes),81,54,Nearby to self-cleaving ribozyme genes
+RAGATH-32,y,n,n,Legionellales (Gammaproteobacteria),27,78,Nearby to self-cleaving ribozyme genes
+RAGATH-33,y,n,n,Environmental,7,119,Nearby to self-cleaving ribozyme genes
+RAGATH-34,y,n,n,Environmental,71,105,Nearby to self-cleaving ribozyme genes
+RAGATH-35,y,n,n,Clostridium (Firmicutes),71,87,Nearby to self-cleaving ribozyme genes
+RAGATH-36,y,n,n,Environmental,68,142,Nearby to self-cleaving ribozyme genes
+RAGATH-7-assoc,y,n,n,Environmental,69,127,Nearby to self-cleaving ribozyme genes
+raiA,Y,y >1,y,"Actinobacteria, Firmicutes",1347,211,Lineage (Negativicutes)
+raiA-hairpin,y,?,n,Streptomyces (Actinobacteria),98,48,Downstream gene
+Rhodo-rpoB,y,y,n,Rhodobacterales (Alphaproteobacteria),485,93,Downstream gene
+rihA,?,y,?,Enterobacteria,122,37,Lineage (Enterobacteria)
+rlpA,?,y,?,human oral metagenome,196,157,"Environment (Human Microbiome Project, throat)"
+ROOL,Y,n,n,"Firmicutes, Fusobacteria (1 example), Tenericutes (1 example)",397,581,Environment (Cow rumen (57))
+Rothia-sucC,y,y,?,Rothia (Actinobacteria),285,61,Downstream gene
+rpfG,y,?,n,Xanthomonas (Gammaproteobacteria),108,85,Downstream gene
+RT-1,y,?,n,Neisseria elongata (Betaproteobacteria),11,185,Nearby to self-splicing intron genes
+RT-2,Y,?,n,"Coriobacteriales (Actinobacteria), Clostridiales (Firmicutes)",482,214,Downstream gene
+RT-3,y,?,n,Bacteroidetes,1055,151,Downstream gene
+RT-4,Y,?,n,Clostridiales,286,112,Downstream gene
+RT-5,y,?,n,Clostridium (Firmicutes),87,107,Environment (Cow rumen (57))
+RT-6,y,?,n,Firmicutes,205,74,Nearby to self-splicing intron genes
+RT-7,Y,?,n,Bacteroidales,202,201,Nearby to self-splicing intron genes
+RT-8,y,?,n,Proteobacteria,25,94,Nearby to self-splicing intron genes
+RT-9,y,?,n,Firmicutes,180,99,Nearby to self-splicing intron genes
+RT-10,y,?,n,Proteobacteria,322,128,Nearby to self-splicing intron genes
+RT-11,y,?,n,Environmental,3,142,Nearby to self-splicing intron genes
+RT-12,y,?,n,Proteobacteria,61,121,Nearby to self-splicing intron genes
+RT-13,Y,?,n,Alphaproteobacteria,13,68,Nearby to self-splicing intron genes
+RT-14,y,?,n,"Cloacimonetes, Firmicutes, Proteobacteria",326,146,Nearby to self-splicing intron genes
+RT-15,y,?,n,Proteobacteria,71,191,Nearby to self-splicing intron genes
+RT-16,y,?,n,candidate division DUSEL4 (Archaea),141,166,Nearby to self-splicing intron genes
+RT-17,y,?,n,"Bacteroidales (Bacteroidetes), Clostridiales (Firmicutes)",232,95,Nearby to self-splicing intron genes
+RT-18,y,?,n,Clostridiales (Firmicutes),504,88,Nearby to self-splicing intron genes
+RT-19,y,?,n,Actinobacteria,36,103,Nearby to self-splicing intron genes
+saliva-tongue-1,y,n,n,Human saliva and tongue dorsum,25,109,Terminator (Clostridia)
+salivarius-1,y,n,n,Lactobacillus salivarius (Firmicutes),24,56,Lineage (Lactobacillaceae)
+sbcC,y,?,?,Environmental,15,146,Terminator (Clostridia)
+skipping-rope,Y,n,n,"Firmicutes, Fusobacteria, Alphaproteobacteria, Spirochaetes",4413,84,Downstream gene
+ssbp,?,?,n,Alphaproteobacteria,49,70,Lineage (Rhizobiales)
+ssnA,y,y,?,Clostridiales,773,48,Downstream gene
+ssNA-helicase,y ssDNA,?,?,"Firmicutes, Actinobacteria (1 example)",308,48,Downstream gene
+Staphylococcus-1,y,?,n,Firmicute (1 example),22,129,Nearby to self-splicing intron genes
+Streptomyces-atpC,y,y,?,Actinobacteria,44,56,Lineage (Actinomycetales)
+Streptomyces-metH,y,?,?,Streptomyces (Actinobacteria),46,125,Lineage (Actinomycetales)
+Streptomyces-metK,y,?,?,Streptomyces (Actinobacteria),45,118,Lineage (Actinomycetales)
+sul1,Y,Y >1,y,Alphaproteobacteria,59,57,Lineage (Rhizobiales)
+terC,Y,y >1,?,"Alphaproteobacteria, Pseudomonadales",141,60,Lineage (Rhizobiales)
+Thermales-rpoB,y,y,n,Thermales (Deinococcus-Thermus),17,90,Lineage (Deinococcus-Thermus)
+throat-1,y,n,n,throat and tongue metagenomes,63,294,"Environment (Human Microbiome Project, throat)"
+Transposase-1,y,?,n,Lactobacillales (Firmicutes),348,58,"Environment (Human Microbiome Project, vagina)"
+Transposase-2,y,?,n,"Actinobacteria, Firmicutes",258,69,Lineage (Bifidobacteriales)
+uup,y,y,?,"Firmicutes, Gammaproteobacteria",723,48,Downstream gene
+uxuA,y,?,n,Vibrio (Gammaproteobacteria),54,88,Downstream gene
+vWFA-era,? palindrome,?,n,human microbiome,114,48,"Environment (Human Microbiome Project, attached gingiva)"
+xerDC,y,y,n,Clostridia,114,130,Downstream gene
+Zeta-pan,y,?,n,Zetaproteobacteria,11,53,Lineage (Zetaproteobacteria)
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
