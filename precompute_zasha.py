@@ -102,6 +102,21 @@ WK   {wiki}
         so_term=so_term, wiki=original_metadata['WK'].replace('http://en.wikipedia.org/wiki/', ''), cc_lines=cc_lines)
 
 
+def generate_lsf_command(lsf_path, motif_name):
+    cmd = ('module load mpi/openmpi-x86_64 && '
+           'bsub -o {0}/{1}/lsf_output.txt -e {0}/{1}/lsf_error.txt -g /emerge '
+                 '"cd {0}/{1} && '
+                 'mv {0}/{1}/SEED {0}/{1}/SEED-backup && '
+                 'esl-reformat --mingap stockholm SEED-backup > SEED && '
+                 'rfsearch.pl -t 30 -cnompi -relax && '
+                 'rfmake.pl -t 50 -a -forcethr && '
+                 'mkdir rscape-seed && R-scape --outdir rscape-seed --cyk align && '
+                 'mkdir rscape-align && R-scape --outdir rscape-align --cyk align && '
+                 'cd .. && '
+                 'rqc-all.pl {1}"').format(lsf_path, motif_name)
+    print(cmd)
+
+
 def main(args):
     """
     """
@@ -120,32 +135,13 @@ def main(args):
 
         shutil.copy(rna, os.path.join(motif_dir, 'SEED'))
         os.chdir(motif_dir)
-        cmd = ('module load mpi/openmpi-x86_64 && '
-               'bsub -o {0}/lsf_output.txt -e {0}/lsf_error.txt -g /emerge '
-                     '"cd {0} && '
-                     'mv {0}/SEED {0}/SEED-backup && '
-                     'esl-reformat --mingap stockholm SEED-backup > SEED && '
-                     'rfsearch.pl -t 30 -cnompi -relax && '
-                     'rfmake.pl -t 50 -a -forcethr && '
-                     'mkdir rscape-seed && R-scape --outdir rscape-seed --cyk align && '
-                     'mkdir rscape-align && R-scape --outdir rscape-align --cyk align && '
-                     'cd .. && '
-                     'rqc-all.pl {1}"').format(motif_dir, motif_name)
-        print(cmd)
-        # if not args.test:
-        #     os.system(cmd)
+
+        generate_lsf_command(args.destination, motif_name)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    # parser.add_argument('-d', '--destination', default=os.getcwd(), help='Specify folder where the output will be created')
-    # parser.add_argument('-i', '--inputfile', help='Specify input folder with Stockholm files')
-    parser.add_argument('-t', '--test', action='store_true', help='Test mode: print commands and exit')
-    parser.set_defaults(test=False)
+    parser.add_argument('-d', '--destination', default=os.getcwd(), help='Specify folder where the output will be created')
     args = parser.parse_args()
-
-    # if not args.inputfile:
-    #     print('Please specify input location')
-    #     sys.exit()
 
     main(args)
