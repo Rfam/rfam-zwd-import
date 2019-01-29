@@ -5,12 +5,12 @@ import glob
 
 from Bio import AlignIO
 
-from zasha2rnacentral import get_folders, get_not_for_rfam_info
+from zwd2rnacentral import get_folders, get_not_for_rfam_info
 
 
 def get_rfam_annotations():
     data = collections.defaultdict(dict)
-    with open('zwd-vs-rfam-cms.tbl', 'r') as infile:
+    with open('zwd-vs-rfam-14.1-cms.tbl', 'r') as infile:
         for line in infile.readlines():
             if line.startswith('#'):
                 continue
