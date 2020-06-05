@@ -79,6 +79,7 @@ def get_obsolete_taxid_mapping(filename):
                 continue
             old, new = line.strip().split('  ')
             mapping[old] = new
+    mapping['1217713'] = '1776741'
     return mapping
 
 
