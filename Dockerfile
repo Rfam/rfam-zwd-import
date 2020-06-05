@@ -10,9 +10,9 @@ RUN apt-get update && apt-get install -y \
 
 RUN git clone https://bitbucket.org/zashaw/zashaweinbergdata.git && \
     cd zashaweinbergdata && \
-    git checkout 48731eb920b7638007c3ef64edbb360462d4f98c
+    git checkout 4cb7e0b72f390ca300d669977adaeb40cddc3c62
 
 RUN git clone https://github.com/RNAcentral/rnacentral-data-schema.git && \
     cd rnacentral-data-schema && \
-    git checkout 98ad1ec84dff861fd1bbc131e941574779cd0076 && \
+    git checkout d34dcc82b35d4b2d748bb6ae4f59e10519500bfe && \
     pip install -r requirements.txt

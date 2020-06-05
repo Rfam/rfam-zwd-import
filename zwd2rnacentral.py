@@ -50,7 +50,7 @@ def get_papers_info(filename):
         for line in infile.readlines():
             fields = line.strip().split('\t')
             if 'https' in fields[1]:
-                papers[fields[0]] = fields[1].replace('https://www.ncbi.nlm.nih.gov/pubmed/', '')
+                papers[fields[0]] = fields[1].replace('https://www.ncbi.nlm.nih.gov/pubmed/', '').replace('https://pubmed.ncbi.nlm.nih.gov/', '')
     return papers
 
 
@@ -104,6 +104,7 @@ def get_folders():
         'ts',
         'twister',
         'variants',
+        'r-leader',
     ]
 
 
@@ -178,9 +179,9 @@ def main():
     data = {
         'data': entries,
         'metaData': {
-                "dateProduced": "2018-08-24T00:00:00+01:00",
+                "dateProduced": "2020-06-05T00:00:00+01:00",
                 'dataProvider': 'ZWD',
-                'release': '1.0',
+                'release': '1.1',
                 'schemaVersion': '0.2.0',
                 'publications': [
                     'PMID:28977401',
