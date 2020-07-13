@@ -2,3 +2,4 @@ env
 *.pyc
 zwd-rnacentral-ids/*
 rfam-precompute/*
+temp/*
