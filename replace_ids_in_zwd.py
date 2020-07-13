@@ -15,9 +15,10 @@ def get_zwd_rnacentral_mapping():
     URS0000D68612	ZWD	NC_009739.1/22315-22194	287	ncRNA
     """
     data = {}
-    with open('/data/rnacentral/zwd-rnacentral-ids.tsv', 'r') as f:
-        reader = csv.DictReader(f, delimiter='\t', fieldnames=('urs', 'label', 'seq_id', 'taxid', 'rna_type'))
+    with open('/data/rnacentral/zwd-rnacentral-ids.csv', 'r') as f:
+        reader = csv.DictReader(f, fieldnames=('urs', 'taxid', 'seq_id'))
         for record in reader:
+            record['seq_id'] = record['seq_id'].replace('ZWD:', '')
             data[record['seq_id']] = record['urs'] + '_' + record['taxid']
     return data
 
