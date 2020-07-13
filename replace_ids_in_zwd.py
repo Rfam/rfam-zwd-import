@@ -38,6 +38,7 @@ def main():
             rna_name = os.path.basename(filename).replace('.sto', '')
             print(rna_name)
             if os.path.join(folder, rna_name + '.sto') in not_for_rfam:
+                print('{} is not for Rfam'.format(rna_name))
                 continue
 
             unique_lines = []
