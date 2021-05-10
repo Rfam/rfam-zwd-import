@@ -96,16 +96,19 @@ def get_folders():
         'NiCo',
         'SAH',
         'SAM-IV',
+        'SAM-SAH-NMR',
         'SAM-VI',
         'THF',
         'c-di-GMP-II',
         'exceptional',
+        'guanidine',
+        # 'hairpin',
         # 'patches',
         'preQ1-III',
+        'r-leader',
         'ts',
         'twister',
         'variants',
-        'r-leader',
     ]
 
 
