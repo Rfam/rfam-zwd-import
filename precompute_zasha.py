@@ -103,15 +103,14 @@ WK   {wiki}
 
 
 def generate_lsf_command(lsf_path, motif_name):
-    cmd = ('module load mpi/openmpi-x86_64 && '
-           'bsub -o {0}/{1}/lsf_output.txt -e {0}/{1}/lsf_error.txt -g /emerge '
+    cmd = ('bsub -o {0}/{1}/lsf_output.txt -e {0}/{1}/lsf_error.txt '
                  '"cd {0}/{1} && '
                  'mv {0}/{1}/SEED {0}/{1}/SEED-backup && '
                  'esl-reformat --mingap stockholm SEED-backup > SEED && '
-                 'rfsearch.pl -t 30 -cnompi -relax && '
-                 'rfmake.pl -t 50 -a -forcethr && '
-                 'mkdir rscape-seed && R-scape --outdir rscape-seed --cyk align && '
-                 'mkdir rscape-align && R-scape --outdir rscape-align --cyk align && '
+                 'rfsearch.pl -t 30 -cnompi -nodesc -relax && '
+                 'rfmake.pl -t 50 -relax -a -forcethr && '
+                 'mkdir rscape-seed && R-scape --outdir rscape-seed -s --fold align && '
+                 'mkdir rscape-align && R-scape --outdir rscape-align -s --fold align && '
                  'cd .. && '
                  'rqc-all.pl {1}"').format(lsf_path, motif_name)
     print(cmd)
