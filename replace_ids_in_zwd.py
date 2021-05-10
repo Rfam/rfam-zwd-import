@@ -36,12 +36,15 @@ def main():
         for filename in glob.glob(os.path.join(location, folder, '*.sto')):
 
             rna_name = os.path.basename(filename).replace('.sto', '')
+            if rna_name not in whitelist:
+                continue
             print(rna_name)
             if os.path.join(folder, rna_name + '.sto') in not_for_rfam:
                 print('{} is not for Rfam'.format(rna_name))
                 continue
 
             unique_lines = []
+            rnacentral_ids = []
             with open(filename, 'r') as zwd_stockholm:
                 with open("/data/rnacentral/zwd-rnacentral-ids/{}.sto".format(rna_name), 'w') as output:
                     for line in zwd_stockholm:
@@ -49,16 +52,24 @@ def main():
                         if line.startswith('#=GC SS_cons'):
                             output.write('#=GC SS_cons'.ljust(35) + line.replace('#=GC SS_cons', '').lstrip())
                         elif line.startswith('#') or line.startswith('//'):
+                            if line.startswith('#=GF'):
+                                continue
                             output.write(line)
                         else:
                             seq_id = re.search(r'(^\S+)(\s+)(.+)', line)
                             sequence_ungapped = seq_id.group(3).replace('.', '')
                             if seq_id and seq_id.group(1) in rnacentral_mapping:
                                 rnacentral_id = '{}/1-{}'.format(rnacentral_mapping[seq_id.group(1)], len(sequence_ungapped)).ljust(35)
+                                if rnacentral_id not in rnacentral_ids:
+                                    rnacentral_ids.append(rnacentral_id)
+                                else:
+                                    continue
                                 new_line = '{}{}\n'.format(rnacentral_id, seq_id.group(3))
                                 if new_line not in unique_lines:
                                     output.write(new_line)
                                     unique_lines.append(new_line)
+                            elif seq_id:
+                                print('{} was not found'.format(seq_id.group(1)))
 
 
 if __name__ == '__main__':
