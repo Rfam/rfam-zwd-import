@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN git clone https://bitbucket.org/zashaw/zashaweinbergdata.git && \
     cd zashaweinbergdata && \
-    git checkout 3cfadf38d5762c07b3f79206977db44cbad354f2
+    git checkout 0957c3b2bf063cfe6abaa03e8b453c2856ad19c1
 
 RUN git clone https://github.com/RNAcentral/rnacentral-data-schema.git && \
     cd rnacentral-data-schema && \
