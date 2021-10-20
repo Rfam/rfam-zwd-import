@@ -15,8 +15,8 @@ def get_zwd_rnacentral_mapping():
     URS0000D68612	ZWD	NC_009739.1/22315-22194	287	ncRNA
     """
     data = {}
-    with open('/data/rnacentral/zwd-rnacentral-ids.csv', 'r') as f:
-        reader = csv.DictReader(f, fieldnames=('urs', 'taxid', 'seq_id'))
+    with open('/data/rnacentral/zwd-rnacentral-ids.tsv', 'r') as f:
+        reader = csv.DictReader(f, delimiter='\t', fieldnames=('urs', 'db_name', 'seq_id', 'taxid', 'rna_type'))
         for record in reader:
             record['seq_id'] = record['seq_id'].replace('ZWD:', '')
             data[record['seq_id']] = record['urs'] + '_' + record['taxid']
@@ -31,24 +31,19 @@ def main():
     rnacentral_mapping = get_zwd_rnacentral_mapping()
 
     for folder in get_folders():
-        if '224' not in folder:
+        if 'hairpin' not in folder:
             continue
         for filename in glob.glob(os.path.join(location, folder, '*.sto')):
-
             rna_name = os.path.basename(filename).replace('.sto', '')
-            if rna_name not in whitelist:
-                continue
             print(rna_name)
             if os.path.join(folder, rna_name + '.sto') in not_for_rfam:
                 print('{} is not for Rfam'.format(rna_name))
                 continue
-
             unique_lines = []
             rnacentral_ids = []
             with open(filename, 'r') as zwd_stockholm:
                 with open("/data/rnacentral/zwd-rnacentral-ids/{}.sto".format(rna_name), 'w') as output:
                     for line in zwd_stockholm:
-
                         if line.startswith('#=GC SS_cons'):
                             output.write('#=GC SS_cons'.ljust(35) + line.replace('#=GC SS_cons', '').lstrip())
                         elif line.startswith('#') or line.startswith('//'):

@@ -92,6 +92,7 @@ def get_folders():
         '104',
         '22',
         '224',
+        'hairpin',
         'MoCo',
         'NiCo',
         'SAH',
